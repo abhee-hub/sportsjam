@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+
+    }
+
+    * {
+        /* box-sizing: border-box; */
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+    /* top section start */
+    .topbar {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+
+        /* position: fixed; */
+    }
+
+    .topbar a:hover {
+        text-decoration: underline;
+        transition: 0.9;
+    }
+
+    .log_sign {
+        margin-left: auto;
+    }
+
+    .log_sign li {
+        list-style: none;
+        display: inline-block;
+        margin: 0px 5px;
+    }
+
+    .log_sign a {
+        font-size: 15px;
+        text-decoration: none;
+        margin: 0x 10px;
+        color: white;
+    }
+
+    .nav {
+
+        display: inline-block;
+    }
+
+    .nav>li>.fas,
+    .far {
+        color: white;
+    }
+
+    .diff_col>a {
+        text-decoration: none;
+    }
+
+    .diff_col:hover>a {
+        color: tomato;
+    }
+
+    /* top section end */
+
+    /* login */
+    #loginn {
+        margin-left: 70%;
+        background-color: white;
+        position: absolute;
+        width: 20%;
+        padding: 15px 20px;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+        ;
+        display: none;
+    }
+
+    #myform {
+        text-align: center;
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+
+    #myform:hover {
+        background-color: rgb(80, 65, 65);
+        color: rgb(252, 29, 29);
+    }
+
+    /* search box start  */
+
+    .logo_search {
+        height: 55px;
+        padding: 15px 2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 220px;
+        height: 60px;
+    }
+
+    .search_wish_cart li {
+        border: 1px solid yellow;
+        display: inline-block;
+        margin: 5px 50px;
+    }
+
+    .search_btn {
+        margin-left: -10px;
+        border-radius: 5px;
+        height: 44px;
+        width: 35px;
+        background-color: #FFFFFF;
+        border: 1px solid rgb(209, 199, 199);
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+        ;
+    }
+
+    .search input {
+        height: 40px;
+        border-radius: 5px;
+        width: 500px;
+        border: 1px solid rgb(209, 199, 199);
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+        ;
+    }
+
+    #Top_search {
+        background-color: rgb(250, 249, 243);
+        position: fixed;
+        width: 300px;
+        box-shadow: rgba(red, 250, 100, 0.6);
+        border-radius: 5px;
+        padding: 20px;
+        line-height: 30px;
+        display: flex;
+        flex-direction: column;
+        display: none;
+
+    }
+
+    #Top_search a {
+        background-color: rosybrown;
+        margin: 5px;
+
+    }
+
+    #cart {
+        text-align: center;
+        width: 25%;
+        position: fixed;
+        line-height: 50px;
+        border-radius: 10px;
+        background-color: white;
+        border-radius: 10px;
+        display: none;
+    }
+
+    #cart button {
+        background-color: #242223;
+        padding: 5px 20px;
+        color: white;
+        width: 90%;
+        border-radius: 8px;
+    }
+
+    /* search box end  */
+
+    /* nav bar */
+    .navlist {
+        background-color: white;
+        border: 1px solid grey;
+        color: black;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        padding-left: 2%;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .navlist a:hover {
+        text-decoration: underline;
+        background-color: black;
+
+    }
+
+    .navlist a {
+        margin: 10px;
+        color: grey;
+
+    }
+
+
+
+    /* nav bar end */
+
+
+    /* nav list start  */
+    .sport_sec {
+        display: flex;
+        padding: 10px;
+        background-color: white;
+        position: absolute;
+        padding-left: 10%;
+        width: 100%;
+        font-size: 12px;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+        ;
+        display: none;
+    }
+
+    .sport_sec div {
+        margin: 10px;
+        color: black;
+        line-height: 30px;
+
+    }
+
+    .sport_sec div a {
+        text-decoration: none;
+    }
+
+    .color-pink {
+        color: #FF66B9;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    /* nav list end  */
+
+
+
+
+    #slide {
+        width: 100%;
+        height: 450px
+    }
+
+    #slide>img {
+        width: 100%;
+        height: 600px;
+    }
+
+
+    /* overlay section start */
+
+    .overlay_sec {
+        margin: 190px 0 40px 0;
+        display: grid;
+        gap: 25px;
+        grid-template-columns: 30% 30% 30%;
+    }
+
+    .image {
+        position: relative;
+        width: 450px;
+    }
+
+    .image>img {
+        margin-left: 35px;
+        display: block;
+        width: 100%;
+    }
+
+    .img_overlay {
+        margin-left: 35px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: rgb(146, 141, 141, 0.6);
+        color: white;
+        font-family: Poppins, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.30s;
+    }
+
+    .img_overlay>* {
+        /* transform: translateY(5px); */
+        transition: transform 0.30s;
+    }
+
+    .img_overlay:hover {
+        opacity: 1;
+    }
+
+    .img_overlay>button:hover {
+        /* transform: translateY(0); */
+        background-color: white;
+        color: black;
+    }
+
+    .img_overlay>button {
+        background-color: rgb(146, 141, 141, 0.6);
+        width: 40%;
+        height: 28px;
+        color: white;
+        border: 1px solid white;
+        margin: 2px 0;
+    }
+
+    .img_des {
+        text-align: center;
+    }
+
+
+    /* overlay section end */
+
+    .victor {
+        display: grid;
+        grid-template-columns: 48% 48%;
+        grid-template-rows: 10px;
+        margin-bottom: 3%;
+
+    }
+
+    .victor>div>h4 {
+        font-family: raleway, sans-serif;
+        color: rgb(39, 38, 38);
+        text-align: center;
+
+    }
+
+    .sportsjam {
+        height: 450px;
+        display: grid;
+        width: 99%;
+        gap: 3%;
+        grid-template-areas: "a b";
+    }
+
+    .jam-img {
+        width: 100%;
+        grid-area: a;
+
+    }
+
+    .para {
+        margin-top: -20px;
+        font-family: raleway, sans-serif;
+        line-height: 25px;
+        width: 100%;
+        grid-area: b;
+        vertical-align: text-top;
+    }
+
+    .para>h2 {
+        color: rgb(39, 38, 38);
+    }
+
+    .para>p {
+        color: grey;
+    }
+
+    .store {
+        width: 30%;
+        height: 40px;
+        color: white;
+        background-color: rgb(39, 38, 38);
+    }
+
+    .store:hover {
+        background-color: orangered;
+        border: 1px solid black;
+        color: white;
+    }
+
+
+
+
+
+    /* testimonial */
+    .testimo {
+        margin: auto;
+        text-align: center;
+        font-family: raleway, sans-serif;
+    }
+
+    .testimo>p {
+        color: grey;
+        margin: 2% 1%;
+    }
+
+    .test-btn {
+        height: 45px;
+        margin-bottom: 3%;
+        background-color: white;
+        width: 13%;
+        padding: 1%;
+        font-size: 18px;
+        border: 1px solid black;
+    }
+
+    .test-btn:hover {
+        border: 1px solid orangered;
+        color: orangered;
+    }
+
+
+
+    #bottom {
+
+        background-color: #ccc8c8;
+    }
+
+    #bottom>div {
+        width: 12%;
+        padding: 1%;
+        display: inline-block;
+
+    }
+
+    #bottom>div>.fas,
+    .fab {
+        margin-left: 15px;
+        color: black;
+        font-size: 40px;
+    }
+
+    #bottom>div>.fab:hover {
+        color: orangered;
+        ;
+    }
+
+    #bottom>div>.fas:hover {
+        color: orangered;
+    }
+
+    #bottom>div>div {
+        margin-top: 6%;
+    }
+
+    #bottom>div>div>p {
+        font-family: Poppins, sans-serif;
+        font-size: small;
+    }
+
+
+
+    /* belowget to know us  */
+
+    #d1 {
+        /* height: 200px; */
+        background-color: #ecf0f1;
+    }
+
+    #d2 {
+        height: 400px;
+        background-color: #2d3436;
+        color: white;
+    }
+
+
+    .d3 {
+        /* border: 1px solid black; */
+        /* height: 250px; */
+        width: 95%;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .d4 {
+        display: inline-block;
+        width: 20%;
+        margin: 0 20px;
+        /* height: 250px; */
+        vertical-align: text-top;
+        line-height: 22px;
+    }
+
+    .d4>span>a {
+        color: white;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .d4>span>a:hover {
+        color: orangered;
+    }
+</style>
+
+<body>
+    <!-- top section -->
+    <div class="topbar">
+        <div class="log_sign">
+            <ul class="nav">
+                <li style="margin: 0 1px ;"><i class="fas fa-phone-alt"></i></li>
+                <li><a href="#">Call Us : +91-9555461555</a></li>
+                <li style="margin: 0 1px 0 10px ;"><i class="fas fa-sign-in-alt"></i></li>
+                <li id="clicklog"><a href="#">Sign in</a></li>
+                <li style="margin: 0 1px 0 10px;"><i class="fas fa-user-alt"></i></li>
+                <li> <a href="#">Create account</a></li>
+                <li style="margin: 0 1px 0 10px ;"><i class="far fa-heart"></i></li>
+                <li class="diff_col"> <a href="#">Wishlist</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- log in  -->
+    <div id="loginn">
+        <p style="text-decoration: underline; font-weight: bold;display:inline-block">CUSTOMER LOGIN</p>
+        <button style="background-color: white;font-weight: bold;border-color: white;margin-left: 30%;"
+            id="cut">X</button>
+        <br>
+        <hr>
+        <p style="margin-top: 20px;">If you are already registered, please log in.</p> <br>
+
+        <lable style="font-weight: bold;font-size: 12px;">Email<sup style="color:red">*</sup></lable> <br> <br>
+        <input type="email" placeholder="Email" style="width:100%;padding:10px;border-radius: 3px;" id="email"><br> <br>
+
+        <lable style="font-weight: bold;font-size: 12px;">Password<sup style="color:red">*</sup></lable> <br> <br>
+        <input type="password" placeholder="Password" style="width:100%;padding:10px;border-radius: 3px;"
+            id="password"><br>
+        <br>
+
+        <p>Forgot your password?</p> <br>
+
+        <button id="myform" onclick="loggin(event)">LOGIN</button>
+
+        <br> <br>
+
+        <div style="background-color: #F7F7F7;width:100%">
+
+            <p>Create your account and enjoy a new shopping experience.</p> <br>
+
+            <a href="account.html"><button id="account">CREATE A NEW ACCOUNT</button></a> <br>
+
+        </div>
+
+
+    </div>
+    <!-- login end -->
+
+
+    <!-- search box -->
+    <div class="logo_search">
+
+        <div class="logo">
+            <a href="index.html"><img
+                    src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/logo.jpg"
+                    alt="There could be logo"></a>
+        </div>
+
+        <div class="search">
+            <ul class="search_wish_cart">
+
+                <li> <input type="text" placeholder="search" id="search_input">
+                    <a href="#"><button class="search_btn"><i class="fas fa-search"></i></button></a>
+                    <div id="Top_search" class="hide_search">
+                        <p>TRENDING</p>
+                        <a href="#">New arrival</a>
+                        <a href="#"> Kit</a>
+                        <a href="#">Make Revolution</a>
+                        <a href="#">add something</a>
+                        <a href="#">add something</a>
+                    </div>
+
+                </li>
+
+                <li><a href="#" style="font-size:35px; margin:0px; padding:0px"> &#9825; </a> </li>
+
+                <li><a> <i style="font-size:40px;" class="fa" id="cart_icon">&#xf07a;</i> </a></li>
+
+                <div id="cart">
+                    <p>Your cart is currently empty</p>
+                    <a href="products.html"><button>Continue Shopping</button></a>
+                </div>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="navlist">
+
+        <a href="#">SPORTS</a>
+
+        <a href="#" id="fitnes_goods">FITNESS</a>
+        <a href="#" id="for_skin">SHOES</a>
+        <a href="#">CLOTHING</a>
+        <a href="#" id="kits&combos">ACCESSORIES</a>
+        <a href="#">LEISURE SPORTS</a>
+        <a href="#">FANGEAR</a>
+        <a href="#">BRANDS</a>
+
+
+    </div>
+
+    <!-- nav list start -->
+    <div class="sport_sec">
+        <div>
+            <p><a href="eyes.html" class="color-pink">Eyes</a></p>
+            <p><a href="#">EyeBrow Enhancer</a></p>
+            <p><a href="#">Eye liner</a></p>
+            <p><a href="#">Eye primer</a></p>
+            <p><a href="#">Eye shadow</a></p>
+            <p><a href="#">False eyelashes</a></p>
+            <p><a href="#">Kajal</a></p>
+            <p><a href="#">Mascara</a></p>
+        </div>
+        <div>
+            <p><a href="eyes.html" class="color-pink">Face</a></p>
+            <p><a href="#">Blush</a></p>
+            <p><a href="#">B.B / C.C cream</a></p>
+            <p><a href="#">Bronzer</a></p>
+            <p><a href="#">Compact</a></p>
+            <p><a href="#">Concealer</a></p>
+            <p><a href="#">Contour</a></p>
+            <p><a href="#">Foundation</a></p>
+            <p><a href="#">Highlighter</a></p>
+            <p><a href="#">Loose power</a></p>
+            <p><a href="#">Primer</a></p>
+            <p><a href="#">Makeup remover</a></p>
+            <p><a href="#">Setting Spray</a></p>
+        </div>
+        <div>
+            <p><a href="lips.html" class="color-pink">Lips</a></p>
+            <p><a href="#">Lip Balm</a></p>
+            <p><a href="#">Lip Gloss</a></p>
+            <p><a href="#">Lip liner</a></p>
+            <p><a href="#">Lipstick</a></p>
+            <p><a href="#">Liquid Lipstick</a></p>
+
+        </div>
+        <div>
+            <p><a href="products.html" class="color-pink">Nails</a></p>
+            <p><a href="#">Nail Polish</a></p>
+        </div>
+        <div>
+            <p><a href="products.html" class="color-pink">Tools & Brushes</a></p>
+            <p><a href="#">Brush set</a></p>
+            <p><a href="#">Face brush</a></p>
+            <p><a href="#">Eye brush</a></p>
+            <p><a href="#">Lip brush</a></p>
+            <p><a href="#">Sponges and Applicators</a></p>
+        </div>
+        <div>
+            <p><a href="eyes.html" class="color-pink">Kits</a></p>
+            <p><a href="#">Eye Palettes</a></p>
+            <p><a href="#">Face palettes</a></p>
+        </div>
+    </div>
+
+    <div class="sport_sec">
+        <div>
+            <p><a href="eyes.html" class="color-pink">Face</a></p>
+            <p><a href="#">Cleanser</a></p>
+            <p><a href="#">cream</a></p>
+            <p><a href="#">Face mask</a></p>
+            <p><a href="#">Serum & Oil</a></p>
+            <p><a href="#">Face Wash</a></p>
+            <p><a href="#">Facial Mist</a></p>
+            <p><a href="#">Facial Wipes</a></p>
+            <p><a href="#">Gel</a></p>
+            <p><a href="#">Scrub</a></p>
+            <p><a href="#">Moisturizer</a></p>
+        </div>
+        <div>
+            <p><a href="eyes.html" class="color-pink">Eyes</a></p>
+            <p><a href="#">Eye Cream</a></p>
+            <p><a href="#">Eye Patch</a></p>
+        </div>
+        <div>
+            <p><a href="lips.html" class="color-pink">Lip Care</a></p>
+            <p><a href="#">Lip Balm</a></p>
+            <p><a href="#">Petrolium Jelly</a></p>
+        </div>
+        <div>
+            <p><a href="products.html" class="color-pink">Bath & Body</a></p>
+            <p><a href="#">Shower Gel</a></p>
+            <p><a href="#">Foot Scrub</a></p>
+            <p><a href="#">Body Oil</a></p>
+        </div>
+        <div>
+            <p><a href="products.html" class="color-pink">Hair</a></p>
+            <p><a href="#">Hair Masque</a></p>
+            <p><a href="#">Hair Gel</a></p>
+            <p><a href="#">Shampoo</a></p>
+        </div>
+    </div>
+
+    <!-- nar list end  -->
+
+
+
+    <div id="slide"></div>
+    <!-- overlay section start -->
+    <div class="overlay_sec">
+        <div class="image">
+            <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/callout_img1.jpg"
+                alt="">
+            <div class="img_overlay">
+                <h2 class="img_title">SPORTS</h2>
+                <p style="margin:1px 0 5px 0;" class="img_des">A huge collection of running shoes and sports equipments
+                </p>
+                <button>BADMINTON</button>
+                <button>FOOTBALL</button>
+                <button>TENNIS</button>
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/callout_img2.jpg"
+                alt="">
+            <div class="img_overlay">
+                <h2 class="img_title">FITNESS</h2>
+                <p style="margin:1px 0 5px 0;" class="img_des">A large selection of gym shoes & gym wear designed to
+                    keep you cool and dry whilst looking good in the gym.</p>
+                <button>GYM ACCESSORIES</button>
+                <button>RUNNING</button>
+                <button>STRENGTH TRAINING</button>
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/callout_img3.jpg"
+                alt="">
+            <div class="img_overlay">
+                <h2 class="img_title">SHOES</h2>
+                <p style="margin:1px 0 5px 0;" class="img_des">Looking for Hiking Boots, Walking Shoes, Sandals or
+                    Outdoor Wear? Choose from a large range today.</p>
+                <button>SHOES-SQUASH</button>
+                <button>FOOTBALL</button>
+                <button>RUNNING</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- overlay section end -->
+
+
+
+
+    <div>
+        <a href=""> <img style="margin-left: 2%; width: 700px;"
+                src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/victor-offer.jpg"
+                alt=""></a>
+        <a href=""><img style="margin-left: 1%;width: 700px;"
+                src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/Slinger.jpg"
+                alt=""></a>
+        <div class="victor">
+            <div>
+                <h4>VICTOR SHOES</h4>
+            </div>
+            <div>
+                <h4>SLINGER GRAND SLAM PACK</h4>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div>
+        <a href=""> <img style="margin: 2% 0;" width="100%"
+                src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/yonex-racquet-offer.jpg"
+                alt=""></a>
+    </div>
+
+    <!-- about sportjam -->
+    <div class="sportsjam">
+        <div class="jam-img"><img width="700px"
+                src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/bta-store.jpg"
+                alt="sportsjam"></div>
+        <div class="para">
+            <h2>ABOUT SPORTSJAM</h2>
+            <p>Let’s get going to dig out the best products in your game & make ‘em available right at your doorstep. We
+                will be glad to serve you in any city in India & speedily, so that you enjoy your product in the coming
+                weekend! All this, with no shipping charges if you purchase above Rs.1000. Scout through your favourite
+                brands with latest technologies. Just click & be its proud owner, at the best available price in the
+                market. Come, help us help you to fly high with your new & improved game with high quality sportsgear!
+            </p>
+            <button class="store">FIND OUR STORE</button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="testimo">
+        <h2>TESTIMONIALS</h2>
+        <p>Amazing products and Excellent Service. Whenever I have called, I have got professional, prompt and
+            consistent reply. Even during giving the free tshirt, you guys called to know the size, but unfortunately
+            the size is large on me. Any chances I can exchange with M size.Although I am loving my new racquet.<span
+                style="font-weight: bold;">-Rajnish, New Delhi</span></p>
+        <button class="test-btn">View All</button>
+
+    </div>
+
+
+
+
+
+
+    <div id="bottom">
+
+        <div>
+            <i class="fas fa-gift"></i>
+            <div>
+                <P>E-gift Voucher</P>
+            </div>
+
+        </div>
+
+        <div>
+            <i style="margin-left: 25px;" class="fas fa-award"></i>
+            <div>
+                <P>Reward Points</P>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-book-open"></i>
+            <div>
+                <P>Buyers Guide</P>
+            </div>
+        </div>
+
+        <div>
+            <i style="margin-left: 33px;" class="fas fa-table-tennis"></i>
+            <div>
+                <P>Customized Service</P>
+            </div>
+        </div>
+
+        <div>
+            <i style="margin-left: 20px;" class="fas fa-truck"></i>
+            <div>
+                <P>Express shipping</P>
+            </div>
+        </div>
+
+        <div>
+            <i style="margin-left: 30px;" class="fas fa-shield-alt"></i>
+            <div>
+                <P>Secure Shopping</P>
+            </div>
+        </div>
+
+        <div>
+            <i style="margin-left: 23px;" class="fab fa-creative-commons-sampling"></i>
+            <div>
+                <P>100% Authentic</P>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- new one -->
+
+    <div id="d1">
+
+    </div>
+    <div id="d2">
+
+        <div class="d3">
+            <div class="d4">
+                <h5>GET TO KNOW US</h5>
+                <span><a href="#"> About Us </a> </span><br>
+                <span><a href="#"> Contact Us </a> </span><br>
+                <span><a href="#"> INQUIRY / FEEDBACK</a> </span><br>
+                <span><a href="#">OUR STORES</a> </span><br>
+                <span><a href="#"> SPORTSJAM TEAM</a> </span><br>
+
+            </div>
+            <div class="d4">
+                <h5>HERE TO HELP</h5>
+                <span><a href="#">REGISTER / LOGIN</a> </span><br>
+                <span><a href="#">DELIVERY & CHARGES</a></span><br>
+                <span><a href="#">PAYMENT OPTION</a></span><br>
+                <span><a href="#">FAQ'S</a> </span><br>
+                <span><a href="#">RETURN POLICY</a> </span><br>
+                <span><a href="#">TRACK MY ORDER</a></span><br>
+                <span><a href="#">BUY IN BULK</a></span><br>
+            </div>
+            <div class="d4" id="subscribe">
+                <h5>PAYMENTS</h5>
+                <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/Payments.png"
+                    alt="">
+
+            </div>
+            <div class="d4">
+                <h5>SIGN UP FOR NEWSLETTER</h5>
+                <h5>CONNECT WITH US</h5>
+                <div>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+                    <a href="https://twitter.com/?lang=en-in" target="_blank"><i class="fab fa-twitter-square"></i></a>
+
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square"></i></a>
+
+
+                </div>
+
+            </div>
+
+            <div>
+                <h6 style="margin-top: 120px;">COPYRIGHT</h6>
+
+                <img style="float: right; margin-top: -40px;" width="100px"
+                    src="https://www.capillarytech.com/img/CapillaryTech.svg" alt="">
+            </div>
+
+            <div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
