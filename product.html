@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+
+        }
+
+        * {
+            /* box-sizing: border-box; */
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        /* top section start */
+        .topbar {
+            background-color: black;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+
+            /* position: fixed; */
+        }
+
+        .topbar a:hover {
+            text-decoration: underline;
+            transition: 0.9;
+        }
+
+        .log_sign {
+            margin-left: auto;
+        }
+
+        .log_sign li {
+            list-style: none;
+            display: inline-block;
+            margin: 0px 5px;
+        }
+
+        .log_sign a {
+            font-size: 15px;
+            text-decoration: none;
+            margin: 0x 10px;
+            color: white;
+        }
+
+        .nav {
+
+            display: inline-block;
+        }
+
+        .nav>li>.fas,
+        .far {
+            color: white;
+        }
+
+        .diff_col>a {
+            text-decoration: none;
+        }
+
+        .diff_col:hover>a {
+            color: tomato;
+        }
+
+        /* top section end */
+
+
+        /* search box start  */
+
+        .logo_search {
+            height: 55px;
+            padding: 15px 2%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 220px;
+            height: 60px;
+        }
+
+        .search_wish_cart li {
+            border: 1px solid yellow;
+            display: inline-block;
+            margin: 5px 50px;
+        }
+
+        .search_btn {
+            margin-left: -10px;
+            border-radius: 5px;
+            height: 44px;
+            width: 35px;
+            background-color: #FFFFFF;
+            border: 1px solid rgb(209, 199, 199);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+            ;
+        }
+
+        .search input {
+            height: 40px;
+            border-radius: 5px;
+            width: 500px;
+            border: 1px solid rgb(209, 199, 199);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+            ;
+        }
+
+        #cart {
+            text-align: center;
+            width: 25%;
+            position: fixed;
+            line-height: 50px;
+            border-radius: 10px;
+            background-color: white;
+            border-radius: 10px;
+            display: none;
+        }
+
+        #cart button {
+            background-color: #242223;
+            padding: 5px 20px;
+            color: white;
+            width: 90%;
+            border-radius: 8px;
+        }
+
+        /* search box end  */
+
+        /* nav bar */
+        .navlist {
+            background-color: white;
+            border: 1px solid grey;
+            color: black;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            padding-left: 2%;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .navlist a:hover {
+            text-decoration: underline;
+            background-color: black;
+
+        }
+
+        .navlist a {
+            margin: 10px;
+            color: grey;
+
+        }
+
+
+
+        /* nav bar end */
+
+
+        /* nav list start  */
+        .sport_sec {
+            display: flex;
+            padding: 10px;
+            background-color: white;
+            position: absolute;
+            padding-left: 10%;
+            width: 100%;
+            font-size: 12px;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+            ;
+            display: none;
+        }
+
+        .sport_sec div {
+            margin: 10px;
+            color: black;
+            line-height: 30px;
+
+        }
+
+        .sport_sec div a {
+            text-decoration: none;
+        }
+
+        .color-black {
+
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* nav list end  */
+
+
+        .home_product {
+            background-color: #F7F7F7;
+            padding: 20px 10% 30px 10%;
+
+        }
+
+        .home_product p a {
+            text-decoration: none;
+            font-size: 12px;
+            color: black;
+            /* margin:10px; */
+        }
+
+        #feature {
+            display: flex;
+            margin-left: 60%;
+            padding: 5px;
+
+        }
+
+        #feature p,
+        #feature select {
+            margin: 5px;
+        }
+
+        #feature p,
+        #feature button {
+            font-weight: bold;
+        }
+
+        #feature button {
+            width: 20px;
+            background-color: white;
+            opacity: 0.5;
+        }
+
+        #feature button:hover {
+            opacity: 2;
+        }
+
+        .showfeat {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            width: 200px;
+            position: absolute;
+            margin-left: 74%;
+            display: none;
+        }
+
+        .showfeat button {
+            width: 100%;
+        }
+
+
+
+
+        #side-btns>div {
+            padding: 10px;
+            margin: 60px 5px;
+            border: 1px solid grey;
+            border-radius: 2px;
+        }
+
+
+
+
+
+        #maindiv {
+            display: grid;
+            gap: 1%;
+            grid-template-columns: 20% 75%;
+        }
+
+        #product {
+
+            margin: 5% 5% 0 5%;
+            width: 90%;
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20%;
+            grid-gap: 5%;
+            justify-content: center;
+        }
+
+        #product>div:hover {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        #product>div>button {
+            background-color: black;
+            color: white;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+        }
+
+        img {
+            width: 60%;
+        }
+
+
+
+
+        #bottom {
+            margin-top: 100px;
+            background-color: #ccc8c8;
+        }
+
+        #bottom>div {
+            width: 12%;
+            padding: 1%;
+            display: inline-block;
+
+        }
+
+        #bottom>div>.fas,
+        .fab {
+            margin-left: 15px;
+            color: black;
+            font-size: 40px;
+        }
+
+        #bottom>div>.fab:hover {
+            color: orangered;
+            ;
+        }
+
+        #bottom>div>.fas:hover {
+            color: orangered;
+        }
+
+        #bottom>div>div {
+            margin-top: 6%;
+        }
+
+        #bottom>div>div>p {
+            font-family: Poppins, sans-serif;
+            font-size: small;
+        }
+
+
+
+        /* belowget to know us  */
+
+        #d1 {
+            /* height: 200px; */
+            background-color: #ecf0f1;
+        }
+
+        #d2 {
+            height: 400px;
+            background-color: #2d3436;
+            color: white;
+        }
+
+
+        .d3 {
+            /* border: 1px solid black; */
+            /* height: 250px; */
+            width: 95%;
+            margin: auto;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+
+        .d4 {
+            display: inline-block;
+            width: 20%;
+            margin: 0 20px;
+            /* height: 250px; */
+            vertical-align: text-top;
+            line-height: 22px;
+        }
+
+        .d4>span>a {
+            color: white;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .d4>span>a:hover {
+            color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- top section -->
+    <div class="topbar">
+        <div class="log_sign">
+            <ul class="nav">
+                <li style="margin: 0 1px ;"><i class="fas fa-phone-alt"></i></li>
+                <li><a href="#">Call Us : +91-9555461555</a></li>
+                <li style="margin: 0 1px 0 10px ;"><i class="fas fa-sign-in-alt"></i></li>
+                <li id="clicklog"><a href="#">Sign in</a></li>
+                <li style="margin: 0 1px 0 10px;"><i class="fas fa-user-alt"></i></li>
+                <li> <a href="#">Create account</a></li>
+                <li style="margin: 0 1px 0 10px ;"><i class="far fa-heart"></i></li>
+                <li class="diff_col"> <a href="#">Wishlist</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- search box -->
+    <div class="logo_search">
+
+        <div class="logo">
+            <a href="index.html"><img
+                    src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/logo.jpg"
+                    alt="There could be logo"></a>
+        </div>
+
+        <div class="search">
+            <ul class="search_wish_cart">
+
+                <li> <input type="text" placeholder="search" id="search_input">
+                    <a href="#"><button class="search_btn"><i class="fas fa-search"></i></button></a>
+
+
+                </li>
+
+                <li><a href="#" style="font-size:35px; margin:0px; padding:0px"> &#9825; </a> </li>
+
+                <li><a href="cart.html"> <i style="font-size:40px;" class="fa" id="cart_icon">&#xf07a;</i> </a></li>
+
+                <div id="cart">
+                    <p>Your cart is currently empty</p>
+                    <a href="product.html"><button>Continue Shopping</button></a>
+                </div>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="navlist">
+
+        <a href="#">SPORTS</a>
+
+        <a href="#" id="fitnes_goods">FITNESS</a>
+        <a href="#" id="for_skin">SHOES</a>
+        <a href="#">CLOTHING</a>
+        <a href="#" id="kits&combos">ACCESSORIES</a>
+        <a href="#">LEISURE SPORTS</a>
+        <a href="#">FANGEAR</a>
+        <a href="#">BRANDS</a>
+
+
+    </div>
+
+    <!-- nav list start -->
+    <div class="sport_sec">
+        <div>
+            <p><a href="eyes.html" class="color-black">Badminton</a></p>
+            <p><a href="#">Rackets</a></p>
+            <p><a href="#">Shoes</a></p>
+            <p><a href="#">Shuttlecock</a></p>
+            <p><a href="#">Grips</a></p>
+            <p><a href="#">Strings</a></p>
+            <p><a href="#">Kajal</a></p>
+            <p><a href="#">Kit bag</a></p>
+            <p><a href="#">Clothing</a></p>
+            <p><a href="#">Accessories</a></p>
+            <p><a href="eyes.html" class="color-black">Basketball</a></p>
+            <p><a href="#">Basketball</a></p>
+            <p><a href="#">Shoes</a></p>
+            <p><a href="#">equipments</a></p>
+
+        </div>
+        <div>
+            <p><a href="eyes.html" class="color-black">Boxing</a></p>
+            <p><a href="#">Glove</a></p>
+            <p><a href="#">Bags</a></p>
+            <p><a href="#">Accessories</a></p>
+            <p><a href="#">Cricket</a></p>
+            <p><a href="#">English Willow</a></p>
+            <p><a href="#">Kashmir Willow</a></p>
+            <p><a href="#">Balls</a></p>
+            <p><a href="#">Shoes</a></p>
+            <p><a href="#">Kit Bags</a></p>
+            <p><a href="#">Cricket set</a></p>
+            <p><a href="#">Clothing</a></p>
+            <p><a href="#">Accessories</a></p>
+        </div>
+        <div>
+            <p><a href="lips.html" class="color-black">Football</a></p>
+            <p><a href="#">footbals</a></p>
+            <p><a href="#">Goalie Glove</a></p>
+            <p><a href="#">Shin Gaurd</a></p>
+            <p><a href="#">Shoes</a></p>
+            <p><a href="#">Accessories</a></p>
+
+        </div>
+        <div>
+            <p><a href="products.html" class="color-black">Golf</a></p>
+            <p><a href="#">Drivers</a></p>
+            <p><a href="#">Irons</a></p>
+            <p><a href="#">Putters</a></p>
+            <p><a href="#">FAirway woods</a></p>
+            <p><a href="#">Wedges</a></p>
+
+
+
+
+        </div>
+        <div>
+            <p><a href="products.html" class="color-black">Squash</a></p>
+            <p><a href="#">Rackets</a></p>
+            <p><a href="#">Shoes</a></p>
+            <p><a href="#">Grips</a></p>
+            <p><a href="#">Balls</a></p>
+            <p><a href="#">Strings</a></p>
+        </div>
+        <div>
+            <p><a href="eyes.html" class="color-black">Table Tennis</a></p>
+            <p><a href="#">Blades</a></p>
+            <p><a href="#">Rubbers</a></p>
+            <p><a href="#">Bats</a></p>
+            <p><a href="#">Balls</a></p>
+            <p><a href="#">Table</a></p>
+            <p><a href="#">Bat Case</a></p>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="sport_sec">
+        <div>
+            <p><a href="eyes.html" class="color-black">Men</a></p>
+            <p><a href="#">Badminton</a></p>
+            <p><a href="#">Basketball</a></p>
+            <p><a href="#">Cricket</a></p>
+            <p><a href="#">Football</a></p>
+            <p><a href="#">Running</a></p>
+            <p><a href="#">Squash</a></p>
+            <p><a href="#">Tennis</a></p>
+            <p><a href="#">Table Tennis</a></p>
+
+        </div>
+        <div>
+            <p><a href="eyes.html" class="color-black">Women</a></p>
+            <p><a href="#">Badminton</a></p>
+            <p><a href="#">Running</a></p>
+            <p><a href="#">Squash</a></p>
+            <p><a href="#">Tennis</a></p>
+
+
+        </div>
+        <div>
+            <p><a href="lips.html" class="color-black">Junior</a></p>
+            <p><a href="#">
+                    <Footer></Footer>
+                </a></p>
+            <p><a href="#">Tennis</a></p>
+        </div>
+        <div>
+            <p><a href="products.html" class="color-black">Other</a></p>
+            <p><a href="#">Insoles</a></p>
+            <p><a href="#">Flip Flop</a></p>
+            <p><a href="#">Socks</a></p>
+        </div>
+
+    </div>
+
+
+
+    <div class="home_product">
+        <p style="display: inline-block;"><a href="index.html">Home</a></p>
+        <p style="display: inline-block; margin:0px 10px"> > </p>
+        <p style="display: inline-block;"><a href="product.html">Products</a></p>
+    </div>
+    <div id="feature">
+        <p>View as</p>
+        <button onclick="onecol()">=</button>
+        <button onclick="threecol()">3</button>
+        <button onclick="fourcol()">4</button>
+        <p>SORT BY</p>
+        <button onclick="showfeature()" style="width:200px">Featured
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;▼</button>
+        <!-- <button onclick="sortLH()">lh</button> -->
+    </div>
+    <div class="showfeat">
+        <button>Featured</button>
+        <a href="#"><button>Best selling</button></a>
+        <button onclick="sortLh()">Price low to high</button>
+        <button onclick="sortHL()">Price high to low</button>
+        <a><button>What's new</button></a>
+    </div>
+
+
+
+
+    <!-- <h1>Local storage</h1> -->
+    <!-- <a href="cart.html"><button>Go to Cart</button></a> -->
+    <!-- <button onclick="sortLh()">Low to High</button>
+    <button onclick="sortHL()">High to Low</button> -->
+    <hr style="border: none;">
+    <div id="maindiv">
+        <div id="sidebar">
+            <div id="container">
+                <div id="side-btns">
+                    <div>
+                        <div>
+                            <h4>CATEGORY MENU</h4>
+                        </div>
+                        <input type="button" id="eyes">
+                        <a href="eyes.html" style="color:black">
+                            <lable>Boxing</lable>
+                        </a> <br>
+                        <input type="button" id="lips">
+                        <lable>Gloves</lable>
+                    </div>
+                    <div>
+                        <div>
+                            <h4>REFINE SEARCH</h4>
+                        </div>
+                        <input type="checkbox" id="Beauty-creations">
+                        <lable>Boxing Accessories</lable> <br>
+                        <input type="checkbox" id="Hok-Makeup">
+                        <a href="eyes.html" style="color:black">
+                            <lable>Boxing Bag</lable>
+                        </a> <br>
+                        <input type="checkbox" id="Revolution Beauty">
+                        <lable>Boxing Gloves</lable>
+                    </div>
+                    <div>
+                        <div>
+                            <h4>PRICE</h4>
+                        </div>
+                        <input type="checkbox" id="0-499">
+                        <a href="eyes.html" style="color:black">
+                            <lable>Rs.0 - Rs.499</lable>
+                        </a> <br>
+                        <input type="checkbox" id="500-999">
+                        <lable>Rs.500 - Rs.999</lable> <br>
+                        <input type="checkbox" id="1000-1999">
+                        <lable>Rs.1000 - Rs.1999</lable>
+                    </div>
+                    <div>
+                        <div>
+                            <h4>DISCOUNT</h4>
+                        </div>
+                        <input type="checkbox" id="15%">
+                        <a href="eyes.html" style="color:black">
+                            <lable>Upto 15%</lable>
+                        </a> <br>
+                        <input type="checkbox" id="30-50%">
+                        <lable>30% - 50%</lable> <br>
+                        <input type="checkbox" id="50%">
+                        <lable>50% & Above</lable>
+                    </div>
+                </div>
+
+                <div id="box"></div>
+
+            </div>
+        </div>
+
+        <div style="overflow: scroll;" id="product"></div>
+    </div>
+
+
+
+    <div id="bottom">
+
+        <div>
+            <i class="fas fa-gift"></i>
+            <div>
+                <P>E-gift Voucher</P>
+            </div>
+
+        </div>
+
+        <div>
+            <i style="margin-left: 25px;" class="fas fa-award"></i>
+            <div>
+                <P>Reward Points</P>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-book-open"></i>
+            <div>
+                <P>Buyers Guide</P>
+            </div>
+        </div>
+
+        <div>
+            <i style="margin-left: 33px;" class="fas fa-table-tennis"></i>
+            <div>
+                <P>Customized Service</P>
+            </div>
+        </div>
+
+        <div>
+            <i style="margin-left: 20px;" class="fas fa-truck"></i>
+            <div>
+                <P>Express shipping</P>
+            </div>
+        </div>
+
+        <div>
+            <i style="margin-left: 30px;" class="fas fa-shield-alt"></i>
+            <div>
+                <P>Secure Shopping</P>
+            </div>
+        </div>
+
+        <div>
+            <i style="margin-left: 23px;" class="fab fa-creative-commons-sampling"></i>
+            <div>
+                <P>100% Authentic</P>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- new one -->
+
+    <div id="d1">
+
+    </div>
+    <div id="d2">
+
+        <div class="d3">
+            <div class="d4">
+                <h5>GET TO KNOW US</h5>
+                <span><a href="#"> About Us </a> </span><br>
+                <span><a href="#"> Contact Us </a> </span><br>
+                <span><a href="#"> INQUIRY / FEEDBACK</a> </span><br>
+                <span><a href="#">OUR STORES</a> </span><br>
+                <span><a href="#"> SPORTSJAM TEAM</a> </span><br>
+
+            </div>
+            <div class="d4">
+                <h5>HERE TO HELP</h5>
+                <span><a href="#">REGISTER / LOGIN</a> </span><br>
+                <span><a href="#">DELIVERY & CHARGES</a></span><br>
+                <span><a href="#">PAYMENT OPTION</a></span><br>
+                <span><a href="#">FAQ'S</a> </span><br>
+                <span><a href="#">RETURN POLICY</a> </span><br>
+                <span><a href="#">TRACK MY ORDER</a></span><br>
+                <span><a href="#">BUY IN BULK</a></span><br>
+            </div>
+            <div class="d4" id="subscribe">
+                <h5>PAYMENTS</h5>
+                <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/Payments.png"
+                    alt="">
+
+            </div>
+            <div class="d4">
+                <h5>SIGN UP FOR NEWSLETTER</h5>
+                <h5>CONNECT WITH US</h5>
+                <div>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+                    <a href="https://twitter.com/?lang=en-in" target="_blank"><i class="fab fa-twitter-square"></i></a>
+
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square"></i></a>
+
+
+                </div>
+
+            </div>
+
+            <div>
+                <h6 style="margin-top: 120px;">COPYRIGHT</h6>
+
+                <!-- <img style="float: right; margin-top: -40px;" width="100px"
+                    src="https://www.capillarytech.com/img/CapillaryTech.svg" alt=""> -->
+            </div>
+
+            <div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    // array of Object
+
+    let data = [
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXHNWRBK.jpg",
+            name: "Everlast Boxing Hand Wraps (180, Black)",
+            margin: "549",
+            price: "499"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVCLTG5212B.jpg",
+            name: "Everlast Classic Training Gloves (Blue)",
+            margin: "1499",
+            price: "1349"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVCLTG5312.jpg",
+            name: "Everlast Classic Training Gloves (Black)",
+            margin: "1499",
+            price: "1349"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVCLTG5112.jpg",
+            name: "Everlast Classic Training Gloves (Red)",
+            margin: "1499",
+            price: "1349"
+        },
+
+
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVCRTG0000205.jpg",
+            name: "Everlast Core Training Gloves (Black/Red)",
+            margin: "1999",
+            price: "1799"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVMY00183.jpg",
+            name: "Everlast Muay Thai Leather Heavy Punching Bag (72/180cm, Black)",
+            margin: "19999",
+            price: "16999"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXWR4455OR.jpg",
+            name: "Everlast Boxing Hand Wraps (120, Orange)",
+            margin: "549",
+            price: "499"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXWR4456BL.jpg",
+            name: "Everlast Boxing Hand Wraps (180, Blue)",
+            margin: "549",
+            price: "499"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXWR4455BLU.jpg",
+            name: "Everlast Boxing Hand Wraps (120 Blue)",
+            margin: "549",
+            price: "499"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXP00000734.jpg",
+            name: "Everlast Boxing Hand Wraps (120 Black/White)",
+            margin: "549",
+            price: "499"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXPRSTTRGLRD.jpg",
+            name: "Everlast Pro Style Training Gloves (Red)",
+            margin: "1899",
+            price: "1699"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXGLMMA7674.jpg",
+            name: "Everlast MMA Grappling Gloves (Black)",
+            margin: "4799",
+            price: "3839"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXSTSHBL.jpg",
+            name: "Everlast Strike Shield (Black)",
+            margin: "2999",
+            price: "2699"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXGLBGBL.jpg",
+            name: "Everlast Glove Bag (Black)",
+            margin: "999",
+            price: "899"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXC3F100LBGL.jpg",
+            name: "Everlast C3 Foam Heavy Bag (13x46, Black/Grey)",
+            margin: "5299",
+            price: "4749"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXMMMNMTBL.jpg",
+            name: "Everlast MMA Mantis Mitts (Black)",
+            margin: "999",
+            price: "899"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXGRGLBL.jpg",
+            name: "Everlast Grappling Gloves (Black)",
+            margin: "1299",
+            price: "1169"
+        },
+        {
+            img: "https://storage.sg.content-cdn.io/cdn-cgi/image/width=500,height=500,quality=75,format=auto,fit=cover,g=top/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/ProductImages/Source/EVBXPRSTTRGLBLL.jpg",
+            name: "Everlast Pro Style Training Gloves (Blue)",
+            margin: "1899",
+            price: "1699"
+        }
+
+    ]
+
+
+    // run a foreach loop on product data
+
+    let parent = document.getElementById("product")
+
+    function showproduct() {
+
+        //  to show only HL and LH data
+        parent.innerHTML = null;
+
+        data.forEach(function (product) {
+            console.log(product.price)
+
+
+            let div = document.createElement("div");
+
+            let img = document.createElement("img")
+            img.src = product.img;
+
+            let product_price = document.createElement("p");
+            product_price.textContent = product.price
+
+
+            let product_name = document.createElement("p")
+            product_name.textContent = product.name;
+
+            let addtoCart_btn = document.createElement("button")
+            addtoCart_btn.innerText = "Add To Cart"
+
+            addtoCart_btn.onclick = function () {
+                addtoCart(product)
+            }
+            div.append(img, product_price, product_name, addtoCart_btn);
+
+            parent.append(div)
+
+        })
+
+    }
+    showproduct()
+
+    if (localStorage.getItem("cart") === null) {
+        localStorage.setItem("cart", JSON.stringify([]))
+    }
+    function addtoCart(product) {
+        let product_cart = JSON.parse(localStorage.getItem("cart"));
+
+        product_cart.push(product)
+
+        localStorage.setItem("cart", JSON.stringify(product_cart));
+        console.log(product_cart)
+
+    }
+
+    function sortLh() {
+        let arr = data.sort(function (a, b) {
+            //   make price low to high
+            return a.price - b.price
+        })
+        showproduct(arr)
+    }
+
+    function sortHL() {
+        let arr = data.sort(function (a, b) {
+            return b.price - a.price
+        })
+        showproduct(arr)
+    }
+
+
+
+
+    function showfeature() {
+        let showdown = document.getElementsByClassName("showfeat")[0]
+        showdown.style.display = "flex"
+    }
+    let showfeat = document.getElementsByClassName("showfeat")[0]
+    let shut = showfeat.querySelectorAll("button")
+    showfeat.addEventListener("mouseleave", shutup)
+
+    function shutup() {
+        showfeat.style.display = "none"
+    }
+
+</script>
