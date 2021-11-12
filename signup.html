@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <title>Document</title>
+</head>
+<style>
+    html{
+     scroll-behavior: smooth;
+
+    }
+
+    * {
+        /* box-sizing: border-box; */
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+    /* top section start */
+    .topbar {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+
+        /* position: fixed; */
+    }
+
+    .topbar a:hover {
+        text-decoration: underline;
+        transition: 0.9;
+    }
+
+    .log_sign {
+        margin-left: auto;
+    }
+
+    .log_sign li {
+        list-style: none;
+        display: inline-block;
+        margin: 0px 5px;
+    }
+
+    .log_sign a {
+        font-size: 15px;
+        text-decoration: none;
+        margin: 0x 10px;
+        color: white;
+    }
+
+    .nav {
+
+        display: inline-block;
+    }
+
+    .nav>li>.fas,
+    .far {
+        color: white;
+    }
+
+    .diff_col>a {
+        text-decoration: none;
+    }
+
+    .diff_col:hover>a {
+        color: tomato;
+    }
+
+    /* top section end */
+    
+
+     /* search box start  */
+           
+        .logo_search {
+            height: 55px;
+            padding: 15px 2%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            width:220px;
+            height:60px;
+        }
+        .search_wish_cart li {
+            border: 1px solid yellow;
+            display:inline-block;
+            margin:5px 50px;
+        }
+        .search_btn {
+            margin-left: -10px;
+            border-radius: 5px;
+            height:44px;
+            width:35px;
+            background-color: #FFFFFF;
+            border: 1px solid rgb(209, 199, 199);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);;
+        }
+        .search input {
+            height: 40px;
+            border-radius: 5px;
+            width:500px;
+            border:1px solid rgb(209, 199, 199);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);;
+        }
+       
+        #cart {
+            text-align: center;
+            width:25%;
+            position: fixed;
+            line-height: 50px;
+            border-radius: 10px;
+            background-color: white;
+            border-radius: 10px;
+            display:none;
+        }
+        #cart button {
+            background-color: #242223;
+            padding:5px 20px;
+            color:white;
+            width:90%;
+            border-radius: 8px;
+        }
+    /* search box end  */
+
+    /* nav bar */
+    .navlist {
+            background-color: white;
+           border: 1px solid grey;
+            color: black;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            padding-left: 2%;
+            width: 100%;
+            margin:  20px 0;
+        }
+
+        .navlist a:hover {
+            text-decoration: underline;
+            background-color: black;
+
+        }
+
+        .navlist a {
+            margin: 10px;
+            color: grey;
+
+        }
+
+
+
+        /* nav bar end */
+
+
+     /* nav list start  */
+      .sport_sec {
+            display:flex;
+            padding:10px;
+            background-color: white;
+            position: absolute;
+            padding-left: 10%;
+            width:100%;
+            font-size: 12px;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);;
+            display:none;
+        }
+        .sport_sec div {
+            margin:10px;
+            color:black;
+            line-height: 30px;
+            
+        }
+        .sport_sec div a {
+            text-decoration: none;
+        }
+        .color-black {
+           
+            color:black;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        /* nav list end  */
+
+
+
+
+
+    .create_account {
+        display: grid;
+        grid-template-columns: 46% 46%;
+        padding: 1%;
+        gap: 2%;
+        color: rgb(87, 84, 84);
+        padding: 2%;
+
+    }
+
+    .account {
+        margin-left: 80px;
+    }
+
+    .account>input {
+        width: 70%;
+        height: 14%;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin: 6px 20px;
+    }
+
+    .account>button {
+        width: 71.5%;
+        margin: 40px 20px;
+        height: 14%;
+        background-color: orange;
+        border-radius: 5px;
+        border: 1px solid orange;
+        color: white;
+        font-size: 20px;
+
+    }
+
+    .text {
+
+        font-size: large;
+        line-height: 25px;
+    }
+
+
+
+
+     #bottom {
+             margin-top: 150px;
+             background-color: #ccc8c8;
+    }
+
+    #bottom>div {
+        width: 12%;
+        padding: 1%;
+        display: inline-block;
+
+    }
+
+    #bottom>div>.fas,
+    .fab {
+        margin-left: 15px;
+        color: black;
+        font-size: 40px;
+    }
+
+    #bottom>div>.fab:hover {
+        color: orangered;
+        ;
+    }
+
+    #bottom>div>.fas:hover {
+        color: orangered;
+    }
+
+    #bottom>div>div {
+        margin-top: 6%;
+    }
+
+    #bottom>div>div>p {
+        font-family: Poppins, sans-serif;
+        font-size: small;
+    }
+
+
+
+    /* belowget to know us  */
+
+    #d1 {
+        /* height: 200px; */
+        background-color: #ecf0f1;
+    }
+
+    #d2 {
+        height: 400px;
+        background-color: #2d3436;
+        color: white;
+    }
+
+
+    .d3 {
+        /* border: 1px solid black; */
+        /* height: 250px; */
+        width: 95%;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .d4 {
+        display: inline-block;
+        width: 20%;
+        margin: 0 20px;
+        /* height: 250px; */
+        vertical-align: text-top;
+        line-height: 22px;
+    }
+
+    .d4>span>a {
+        color: white;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .d4>span>a:hover {
+        color: orangered;
+    }
+</style>
+
+<body>
+<!-- top section -->
+<div class="topbar">
+    <div class="log_sign">
+        <ul class="nav">
+            <li style="margin: 0 1px ;"><i class="fas fa-phone-alt"></i></li>
+            <li><a href="#">Call Us : +91-9555461555</a></li>
+            <li style="margin: 0 1px 0 10px ;"><i class="fas fa-sign-in-alt"></i></li>
+            <li id="clicklog"><a href="#">Sign in</a></li>
+            <li style="margin: 0 1px 0 10px;"><i class="fas fa-user-alt"></i></li>
+            <li> <a href="#">Create account</a></li>
+            <li style="margin: 0 1px 0 10px ;"><i class="far fa-heart"></i></li>
+            <li class="diff_col"> <a href="#">Wishlist</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- search box -->
+<div class="logo_search">
+
+    <div class="logo">
+        <a href="index.html"><img
+                src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/logo.jpg"
+                alt="There could be logo"></a>
+    </div>
+
+    <div class="search">
+        <ul class="search_wish_cart">
+
+            <li> <input type="text" placeholder="search" id="search_input">
+                <a href="#"><button class="search_btn"><i class="fas fa-search"></i></button></a>
+
+
+            </li>
+
+            <li><a href="#" style="font-size:35px; margin:0px; padding:0px"> &#9825; </a> </li>
+
+            <li><a> <i style="font-size:40px;" class="fa" id="cart_icon">&#xf07a;</i> </a></li>
+
+            <div id="cart">
+                <p>Your cart is currently empty</p>
+                <a href="product.html"><button>Continue Shopping</button></a>
+            </div>
+
+        </ul>
+
+    </div>
+</div>
+
+
+<div class="navlist">
+
+    <a href="#">SPORTS</a>
+
+    <a href="#" id="fitnes_goods">FITNESS</a>
+    <a href="#" id="for_skin">SHOES</a>
+    <a href="#">CLOTHING</a>
+    <a href="#" id="kits&combos">ACCESSORIES</a>
+    <a href="#">LEISURE SPORTS</a>
+    <a href="#">FANGEAR</a>
+    <a href="#">BRANDS</a>
+
+
+</div>
+
+<!-- nav list start -->
+<div class="sport_sec">
+    <div>
+        <p><a href="eyes.html" class="color-black">Badminton</a></p>
+        <p><a href="#">Rackets</a></p>
+        <p><a href="#">Shoes</a></p>
+        <p><a href="#">Shuttlecock</a></p>
+        <p><a href="#">Grips</a></p>
+        <p><a href="#">Strings</a></p>
+        <p><a href="#">Kajal</a></p>
+        <p><a href="#">Kit bag</a></p>
+        <p><a href="#">Clothing</a></p>
+        <p><a href="#">Accessories</a></p>
+        <p><a href="eyes.html" class="color-black">Basketball</a></p>
+        <p><a href="#">Basketball</a></p>
+        <p><a href="#">Shoes</a></p>
+        <p><a href="#">equipments</a></p>
+
+    </div>
+    <div>
+        <p><a href="eyes.html" class="color-black">Boxing</a></p>
+        <p><a href="#">Glove</a></p>
+        <p><a href="#">Bags</a></p>
+        <p><a href="#">Accessories</a></p>
+        <p><a href="#">Cricket</a></p>
+        <p><a href="#">English Willow</a></p>
+        <p><a href="#">Kashmir Willow</a></p>
+        <p><a href="#">Balls</a></p>
+        <p><a href="#">Shoes</a></p>
+        <p><a href="#">Kit Bags</a></p>
+        <p><a href="#">Cricket set</a></p>
+        <p><a href="#">Clothing</a></p>
+        <p><a href="#">Accessories</a></p>
+    </div>
+    <div>
+        <p><a href="lips.html" class="color-black">Football</a></p>
+        <p><a href="#">footbals</a></p>
+        <p><a href="#">Goalie Glove</a></p>
+        <p><a href="#">Shin Gaurd</a></p>
+        <p><a href="#">Shoes</a></p>
+        <p><a href="#">Accessories</a></p>
+
+    </div>
+    <div>
+        <p><a href="products.html" class="color-black">Golf</a></p>
+        <p><a href="#">Drivers</a></p>
+        <p><a href="#">Irons</a></p>
+        <p><a href="#">Putters</a></p>
+        <p><a href="#">FAirway woods</a></p>
+        <p><a href="#">Wedges</a></p>
+
+
+
+
+    </div>
+    <div>
+        <p><a href="products.html" class="color-black">Squash</a></p>
+        <p><a href="#">Rackets</a></p>
+        <p><a href="#">Shoes</a></p>
+        <p><a href="#">Grips</a></p>
+        <p><a href="#">Balls</a></p>
+        <p><a href="#">Strings</a></p>
+    </div>
+    <div>
+        <p><a href="eyes.html" class="color-black">Table Tennis</a></p>
+        <p><a href="#">Blades</a></p>
+        <p><a href="#">Rubbers</a></p>
+        <p><a href="#">Bats</a></p>
+        <p><a href="#">Balls</a></p>
+        <p><a href="#">Table</a></p>
+        <p><a href="#">Bat Case</a></p>
+
+
+
+
+    </div>
+</div>
+
+<div class="sport_sec">
+    <div>
+        <p><a href="eyes.html" class="color-black">Men</a></p>
+        <p><a href="#">Badminton</a></p>
+        <p><a href="#">Basketball</a></p>
+        <p><a href="#">Cricket</a></p>
+        <p><a href="#">Football</a></p>
+        <p><a href="#">Running</a></p>
+        <p><a href="#">Squash</a></p>
+        <p><a href="#">Tennis</a></p>
+        <p><a href="#">Table Tennis</a></p>
+
+    </div>
+    <div>
+        <p><a href="eyes.html" class="color-black">Women</a></p>
+        <p><a href="#">Badminton</a></p>
+        <p><a href="#">Running</a></p>
+        <p><a href="#">Squash</a></p>
+        <p><a href="#">Tennis</a></p>
+
+
+    </div>
+    <div>
+        <p><a href="lips.html" class="color-black">Junior</a></p>
+        <p><a href="#">
+                <Footer></Footer>
+            </a></p>
+        <p><a href="#">Tennis</a></p>
+    </div>
+    <div>
+        <p><a href="products.html" class="color-black">Other</a></p>
+        <p><a href="#">Insoles</a></p>
+        <p><a href="#">Flip Flop</a></p>
+        <p><a href="#">Socks</a></p>
+    </div>
+
+</div>
+
+
+
+
+
+    <div style="display: grid; grid-template-columns: 50% 50%; text-align: center; color: orange;">
+        <h2>NEW USER</h2>
+        <h2>REGISTRATION</h2>
+    </div>
+    <hr style="width: 100%; border:1px solid orange;">
+    <div class="create_account">
+        <div class="text">
+            <p>At Sportsjam.in, buy your favourite brand and sportsgear at great prices. Don't forget to use our welcome
+                gift vouchers (worth Rs.2000)* for more savings!
+
+                Register online and and enjoy the following benefits:</p>
+            <ul>
+                <li>Get Discount Vouchers, Special Promotions & Offers</li>
+                <li>Checkout faster while making your purchases</li>
+                <li>View your Order History and track your Order Status</li>
+                <li>Make changes to your account information or password</li>
+            </ul>
+
+        </div>
+        <div class="account">
+
+            <label>First Name</label>
+            <input id="firstname" type="text">
+            <br>
+            <label>Mobile No</label>
+            <input style="margin-left: 20px;" id="mobile" type="number">
+            <br>
+            <label>Email</label>
+            <input style="margin-left: 50px;" id="email" type="email">
+            <br>
+            <label>Password</label>
+            <input style="margin-left: 26px;" id="pass" type="password">
+            <br>
+            <label>Confirm <br> Password</label>
+            <input style="margin-left: 26px;" id="confirm_pass" type="password">
+            <br>
+
+            <button style="margin-left: 90px;">Submit</button>
+            <p style="font-size: small; margin:-30px 0 0 100px ;">By clicking "Register" button, you confirm that you
+                accept our <a style="text-decoration: none;" href=""> terms and conditions.</a> </p>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div id="bottom">
+    
+        <div>
+            <i class="fas fa-gift"></i>
+            <div>
+                <P>E-gift Voucher</P>
+            </div>
+    
+        </div>
+    
+        <div>
+            <i style="margin-left: 25px;" class="fas fa-award"></i>
+            <div>
+                <P>Reward Points</P>
+            </div>
+        </div>
+    
+        <div>
+            <i class="fas fa-book-open"></i>
+            <div>
+                <P>Buyers Guide</P>
+            </div>
+        </div>
+    
+        <div>
+            <i style="margin-left: 33px;" class="fas fa-table-tennis"></i>
+            <div>
+                <P>Customized Service</P>
+            </div>
+        </div>
+    
+        <div>
+            <i style="margin-left: 20px;" class="fas fa-truck"></i>
+            <div>
+                <P>Express shipping</P>
+            </div>
+        </div>
+    
+        <div>
+            <i style="margin-left: 30px;" class="fas fa-shield-alt"></i>
+            <div>
+                <P>Secure Shopping</P>
+            </div>
+        </div>
+    
+        <div>
+            <i style="margin-left: 23px;" class="fab fa-creative-commons-sampling"></i>
+            <div>
+                <P>100% Authentic</P>
+            </div>
+        </div>
+    
+    </div>
+    
+    
+    
+    <!-- new one -->
+    
+    <div id="d1">
+    
+    </div>
+    <div id="d2">
+    
+        <div class="d3">
+            <div class="d4">
+                <h5>GET TO KNOW US</h5>
+                <span><a href="#"> About Us </a> </span><br>
+                <span><a href="#"> Contact Us </a> </span><br>
+                <span><a href="#"> INQUIRY / FEEDBACK</a> </span><br>
+                <span><a href="#">OUR STORES</a> </span><br>
+                <span><a href="#"> SPORTSJAM TEAM</a> </span><br>
+    
+            </div>
+            <div class="d4">
+                <h5>HERE TO HELP</h5>
+                <span><a href="#">REGISTER / LOGIN</a> </span><br>
+                <span><a href="#">DELIVERY & CHARGES</a></span><br>
+                <span><a href="#">PAYMENT OPTION</a></span><br>
+                <span><a href="#">FAQ'S</a> </span><br>
+                <span><a href="#">RETURN POLICY</a> </span><br>
+                <span><a href="#">TRACK MY ORDER</a></span><br>
+                <span><a href="#">BUY IN BULK</a></span><br>
+            </div>
+            <div class="d4" id="subscribe">
+                <h5>PAYMENTS</h5>
+                <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/Payments.png"
+                    alt="">
+    
+            </div>
+            <div class="d4">
+                <h5>SIGN UP FOR NEWSLETTER</h5>
+                <h5>CONNECT WITH US</h5>
+                <div>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+    
+                    <a href="https://twitter.com/?lang=en-in" target="_blank"><i class="fab fa-twitter-square"></i></a>
+    
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    
+                    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square"></i></a>
+    
+    
+                </div>
+    
+            </div>
+    
+            <div>
+                <h6 style="margin-top: 120px;">COPYRIGHT</h6>
+    
+                <img style="float: right; margin-top: -40px;" width="100px"
+                    src="https://www.capillarytech.com/img/CapillaryTech.svg" alt="">
+            </div>
+    
+            <div>
+            </div>
+        </div>
+    
+    
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.querySelector("button").addEventListener("click", signup);
+    var userarr = JSON.parse(localStorage.getItem("userdata")) || []
+
+    function signup() {
+        // e.preventDefault()
+        var firstname = document.getElementById("firstname").value;
+        var mobile = document.getElementById("mobile").value;
+        var email = document.getElementById("email").value;
+        var pass = document.getElementById("pass").value;
+        var confirm_pass = document.getElementById("confirm_pass").value;
+
+
+        var usercred = {
+            firstName: firstname,
+            mobileno: mobile,
+            emailaddress: email,
+            password: pass,
+            confirm_pass: confirm_pass,
+
+        };
+        userarr.push(usercred);
+
+
+        localStorage.setItem("userdata", JSON.stringify(userarr))
+
+        window.location.href = "signin.html"
+
+
+    }
+</script>
