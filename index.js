@@ -182,29 +182,4 @@
 
     //login end
 
-    //chat box start 
-
-    let selectchatbtn = document.getElementById("chatshowbtn")
-    selectchatbtn.addEventListener("click" , chat_dikhao)
-
-    let dikhana = document.getElementById("chatwith_ankit")
-
-
-    function chat_dikhao() {
-        dikhana.style.display = "block"
-    }
-
-    function htta() {
-        dikhana.style.display = "none"
-    }
-
-
-    function dikhaobar() {
-        let sidebar = document.getElementById("side-bar")
-        sidebar.style.display = "block"
-    }
-
-    function htaobar() {
-        let sidebar = document.getElementById("side-bar")
-        sidebar.style.display = "none"
-    }
+   
