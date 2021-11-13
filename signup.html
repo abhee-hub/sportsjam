@@ -328,7 +328,7 @@
             <li style="margin: 0 1px 0 10px ;"><i class="fas fa-sign-in-alt"></i></li>
             <li id="clicklog"><a href="signin.html">Sign in</a></li>
             <li style="margin: 0 1px 0 10px;"><i class="fas fa-user-alt"></i></li>
-            <li> <a href="#">Create account</a></li>
+            <li> <a href="signup.html">Create account</a></li>
             <li style="margin: 0 1px 0 10px ;"><i class="far fa-heart"></i></li>
             <li class="diff_col"> <a href="#">Wishlist</a></li>
         </ul>
@@ -373,13 +373,13 @@
 
     <a href="#">SPORTS</a>
 
-    <a href="#" id="fitnes_goods">FITNESS</a>
-    <a href="#" id="for_skin">SHOES</a>
-    <a href="#">CLOTHING</a>
-    <a href="#" id="kits&combos">ACCESSORIES</a>
-    <a href="#">LEISURE SPORTS</a>
-    <a href="#">FANGEAR</a>
-    <a href="#">BRANDS</a>
+    <a href="product.html" id="fitnes_goods">FITNESS</a>
+    <a href="product.html" id="for_skin">SHOES</a>
+    <a href="product.html">CLOTHING</a>
+    <a href="product.html" id="kits&combos">ACCESSORIES</a>
+    <a href="product.html">LEISURE SPORTS</a>
+    <a href="product.html">FANGEAR</a>
+    <a href="product.html">BRANDS</a>
 
 
 </div>
@@ -541,7 +541,7 @@
             <input style="margin-left: 26px;" id="confirm_pass" type="password">
             <br>
 
-            <button style="margin-left: 90px;">Submit</button>
+            <button id="clickon" style="margin-left: 90px;">Submit</button>
             <p style="font-size: small; margin:-30px 0 0 100px ;">By clicking "Register" button, you confirm that you
                 accept our <a style="text-decoration: none;" href=""> terms and conditions.</a> </p>
 
@@ -676,7 +676,7 @@
 </html>
 
 <script>
-    document.querySelector("button").addEventListener("click", signup);
+    document.getElementById("clickon").addEventListener("click", signup);
     var userarr = JSON.parse(localStorage.getItem("userdata")) || []
 
     function signup() {
