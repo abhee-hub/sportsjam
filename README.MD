@@ -5,7 +5,7 @@ Hello There, My Name is Abhishek Mishra currently i'm learning in Masai School T
 In the end of the unit two we got the project to make Clone of an application.
 I've selected for the make clone of https://www.sportsjam.in/
 
-Well its a application where you can buy all the products related sports.
+Well its an application where you can buy all the products related sports.
 
 What are the equipment used in sports?
 
